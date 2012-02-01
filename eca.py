@@ -11,13 +11,8 @@ def init_list(x):
 def conv_bin(x):
   """Takes an int and converts it into a binary number and places each bit into a list"""
   out = []
-  num = x
-  for i in range(7,-1,-1):
-    if num>=2**i:
-      num = num - 2**i
-      out.append(1)
-    else:
-      out.append(0)
+  for i in xrange(7,-1,-1):
+      out.append((x & 2**i) >> i)
   return out
 
 def conv_deci(x):
