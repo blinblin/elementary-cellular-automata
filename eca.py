@@ -18,12 +18,8 @@ def conv_bin(x):
 def conv_deci(x):
   """Takes a list that represents a binary number and converts it into an int"""
   sum = 0
-  if x[0] == 1:
-    sum+=4
-  if x[1] == 1:
-    sum+=2
-  if x[2] == 1:
-    sum+=1
+  for i in xrange(3):
+    sum += x[i]*(2**(2-i))
   return sum
 
 def update(x,rule):
